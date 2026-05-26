@@ -1,0 +1,64 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "total": 38,
+      "relevant": 13
+    },
+    "3": {
+      "ok": true
+    },
+    "5": {
+      "ok": true,
+      "artifact": "reports\\verification\\verify_2026-03-09T16-01-55-035Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "count": 23
+    },
+    "1b": {
+      "ok": true,
+      "issues": [],
+      "count": 15
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "count": 38
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "total": 38,
+      "relevant": 13
+    }
+  },
+  "issues": [
+    {
+      "phase": "1b",
+      "error": "Exit code 1"
+    },
+    {
+      "phase": "2.5",
+      "error": "Exit code 3221226505",
+      "nonBlocking": true
+    },
+    {
+      "phase": "4",
+      "error": "Exit code 1"
+    }
+  ],
+  "startedAt": "2026-03-09T16:01:55.036Z",
+  "runStamp": "2026-03-09T16-01-55-035Z",
+  "finishedAt": "2026-03-09T16:05:14.832Z",
+  "elapsedSec": "199.8",
+  "artifacts": {
+    "vacancyReport": "reports\\vacancies_report.md",
+    "verificationReport": "reports\\verification\\verify_2026-03-09T16-01-55-035Z.json",
+    "sessionNotes": "reports\\session_notes\\session_2026-03-09T16-01-55-035Z.md",
+    "runHistoryReport": "data\\runs\\run_2026-03-09T16-01-55-035Z.json",
+    "lastRunReport": "data\\last_run.json"
+  }
+}

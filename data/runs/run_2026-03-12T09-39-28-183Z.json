@@ -1,0 +1,55 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "total": 50,
+      "relevant": 24
+    },
+    "3": {
+      "ok": true
+    },
+    "5": {
+      "ok": true,
+      "artifact": "reports\\verification\\verify_2026-03-12T09-39-28-183Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "count": 23
+    },
+    "1b": {
+      "ok": true,
+      "issues": [],
+      "count": 27
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "count": 50
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "total": 50,
+      "relevant": 24
+    }
+  },
+  "issues": [
+    {
+      "phase": "1a",
+      "error": "Exit code 1"
+    }
+  ],
+  "startedAt": "2026-03-12T09:39:28.185Z",
+  "runStamp": "2026-03-12T09-39-28-183Z",
+  "finishedAt": "2026-03-12T09:44:03.941Z",
+  "elapsedSec": "275.8",
+  "artifacts": {
+    "vacancyReport": "reports\\vacancies_report.md",
+    "verificationReport": "reports\\verification\\verify_2026-03-12T09-39-28-183Z.json",
+    "sessionNotes": "reports\\session_notes\\session_2026-03-12T09-39-28-183Z.md",
+    "runHistoryReport": "data\\runs\\run_2026-03-12T09-39-28-183Z.json",
+    "lastRunReport": "data\\last_run.json"
+  }
+}

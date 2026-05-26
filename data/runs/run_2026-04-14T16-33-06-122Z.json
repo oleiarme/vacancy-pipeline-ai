@@ -1,0 +1,73 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "total": 111,
+        "relevant": 52
+      }
+    },
+    "3": {
+      "ok": true,
+      "reportPath": "C:\\Users\\oleia\\Documents\\2026\\antigravity\\cv\\reports\\vacancies_report.md"
+    },
+    "4": {
+      "ok": true,
+      "issues": []
+    },
+    "5": {
+      "ok": true,
+      "issues": [],
+      "artifact": "reports\\verification\\verify_2026-04-14T16-33-06-122Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 29
+      }
+    },
+    "1b": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 87
+      }
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 116
+      }
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "total": 111,
+        "relevant": 52
+      }
+    },
+    "2.5": {
+      "ok": true,
+      "issues": []
+    }
+  },
+  "issues": [],
+  "startedAt": "2026-04-14T16:33:06.125Z",
+  "runStamp": "2026-04-14T16-33-06-122Z",
+  "finishedAt": "2026-04-14T16:33:06.194Z",
+  "elapsedSec": "0.1"
+}

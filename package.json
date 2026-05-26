@@ -1,0 +1,37 @@
+{
+  "description": "Vacancy Monitoring Pipeline",
+  "scripts": {
+    "run:all": "node scripts/orchestrate.js",
+    "run:full": "node scripts/parse_glassdoor_entry.js && node scripts/parse_linkedin.js && node scripts/merge_vacancies.js && node scripts/hydrate_descriptions.js && node scripts/score_vacancies.js && node scripts/resume_self_check.js && node scripts/supabase_sync.js && node scripts/send_telegram.js",
+    "run:scrape": "node scripts/parse_glassdoor_entry.js && node scripts/parse_linkedin.js && node scripts/merge_vacancies.js",
+    "run:hydrate": "node scripts/hydrate_descriptions.js",
+    "auth:linkedin": "npx playwright codegen --channel chrome --save-storage=../auth/linkedin_state.json https://www.linkedin.com/login",
+    "auth:linkedin:profile": "node scripts/auth_linkedin_profile.js",
+    "gmail:auth": "node scripts/gmail_auth.js",
+    "run:glassdoor:gmail": "node scripts/parse_gmail_glassdoor.js",
+    "run:score": "echo 'Trigger /score-vacancies in AI agent'",
+    "run:score:fast": "node scripts/score_vacancies.js",
+    "run:sync": "node scripts/verify_pipeline.js && node scripts/supabase_sync.js",
+    "run:telegram": "node scripts/verify_pipeline.js && node scripts/send_telegram.js",
+    "run:telegram:under": "node scripts/send_telegram.js --under_min_score",
+    "run:resume-check": "node scripts/resume_self_check.js",
+    "run:skip-parse": "node scripts/orchestrate.js --skip-parse",
+    "run:dry": "node scripts/orchestrate.js --dry-run",
+    "run:smoke": "node scripts/smoke_checks.js",
+    "doctor:quick": "npm run test:fixtures && node scripts/verify_pipeline.js",
+    "doctor": "npm run doctor:quick",
+    "test:contract": "node --test tests/hydration_scoring_contract.test.js",
+    "test:fixtures": "node --test tests/config.test.js tests/hydration_scoring_contract.test.js tests/ignore_registry.test.js tests/linkedin_jobs_home_fixtures.test.js tests/linkedin_notifications_fixtures.test.js tests/location_policy_fixtures.test.js tests/merge_vacancies_fixtures.test.js tests/notion_presence.test.js tests/scoring_rules_fixtures.test.js tests/telegram_delivery.test.js tests/telegram_formatting.test.js tests/vacancy_utils_fixtures.test.js",
+    "setup:hooks": "node scripts/setup_git_hooks.js",
+    "verify:pipeline": "node scripts/verify_pipeline.js",
+    "verify:static": "node scripts/verify_static.js",
+    "verify:runtime": "node scripts/verify_runtime.js",
+    "verify:all": "node scripts/verify_pipeline.js",
+    "check:data": "node -e \"const d=require('./data/vacancies.json');console.log('Total:',d.length)\"",
+    "check:scored": "node -e \"const d=require('./data/scored_vacancies.json');const r=d.filter(v=>v.relevant===true);console.log('Total:',d.length,'Relevant:',r.length)\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.98.0",
+    "playwright": "^1.58.2"
+  }
+}

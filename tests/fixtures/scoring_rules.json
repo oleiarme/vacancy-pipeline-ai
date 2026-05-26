@@ -1,0 +1,521 @@
+{
+  "mandatorySkillCases": [
+    {
+      "name": "extracts required skills but ignores nice-to-have lines",
+      "text": "Requirements: strong experience with Terraform and Python. Nice to have Kubernetes and Grafana.",
+      "expected": [
+        "python",
+        "terraform"
+      ]
+    },
+    {
+      "name": "extracts data-platform mandatory skills from requirement language",
+      "text": "Requirements: experience with Python, BigQuery, DBT, and Airflow. Bonus points for Airtable.",
+      "expected": [
+        "python",
+        "bigquery",
+        "dbt",
+        "airflow"
+      ]
+    }
+  ],
+  "detectSkillCases": [
+    {
+      "name": "detects airflow astro and elt wording",
+      "text": "Build and orchestrate scalable ELT pipelines using Astro (Airflow).",
+      "expected": [
+        "airflow",
+        "astro",
+        "elt"
+      ]
+    },
+    {
+      "name": "detects bigquery dbt sql and data quality",
+      "text": "Hands-on BigQuery, DBT, SQL, and data quality tests for transformations.",
+      "expected": [
+        "bigquery",
+        "dbt",
+        "sql",
+        "data-quality"
+      ]
+    },
+    {
+      "name": "detects airtable and api integrations",
+      "text": "Integrate Airtable and third-party API integrations into the pipeline.",
+      "expected": [
+        "airtable",
+        "api-integrations"
+      ]
+    },
+    {
+      "name": "does not detect golang from generic go wording",
+      "text": "We go fast, learn continuously, and adapt to change.",
+      "expected": [],
+      "absent": [
+        "golang"
+      ]
+    },
+    {
+      "name": "detects applied ai usage and orchestration signals",
+      "text": "Design and deploy embeddings, LLM prompt engines, agentic AI workflows, AI adoption initiatives, and ML-Ops automation.",
+      "expected": [
+        "llm",
+        "embeddings",
+        "prompt-engineering",
+        "ai-agents",
+        "ai-adoption",
+        "mlops"
+      ]
+    },
+    {
+      "name": "detects training heavy ai signals",
+      "text": "Train and fine-tune deep learning models with PyTorch and TensorFlow for research workflows and data annotation.",
+      "expected": [
+        "fine-tuning",
+        "deep-learning",
+        "annotation",
+        "research-ml"
+      ]
+    }
+  ],
+  "gapClassificationCases": [
+    {
+      "name": "airtable is familiarizable with python sql and api background",
+      "skill": "airtable",
+      "resumeSkills": [
+        "python",
+        "sql",
+        "postgresql"
+      ],
+      "resumeText": "Built Python services with SQL data flows and API integrations.",
+      "expectedKind": "familiarizable",
+      "softExpected": true
+    },
+    {
+      "name": "bigquery is adjacent when gcp and sql are present",
+      "skill": "bigquery",
+      "resumeSkills": [
+        "gcp",
+        "sql",
+        "python"
+      ],
+      "resumeText": "Built Python data workflows on GCP with SQL and PostgreSQL.",
+      "expectedKind": "adjacent_ownership_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "dbt is adjacent when sql and cicd are present",
+      "skill": "dbt",
+      "resumeSkills": [
+        "sql",
+        "ci/cd",
+        "python"
+      ],
+      "resumeText": "Used SQL transformations with GitHub Actions CI/CD and Python automation.",
+      "expectedKind": "adjacent_ownership_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "airflow is adjacent when python automation and cicd are present",
+      "skill": "airflow",
+      "resumeSkills": [
+        "python",
+        "ci/cd",
+        "bash"
+      ],
+      "resumeText": "Built Python automation, pipeline scripts, and CI/CD workflows.",
+      "expectedKind": "adjacent_ownership_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "bigquery stays hard gap without gcp or sql base",
+      "skill": "bigquery",
+      "resumeSkills": [
+        "linux",
+        "terraform"
+      ],
+      "resumeText": "Managed Linux infrastructure with Terraform.",
+      "expectedKind": "hard_gap",
+      "softExpected": false
+    },
+    {
+      "name": "aks adjacent with production kubernetes baseline",
+      "skill": "aks",
+      "resumeSkills": [
+        "kubernetes"
+      ],
+      "resumeText": "Managed production Kubernetes clusters with on-call and incident response, deployed microservices.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "aks hard gap without production kubernetes",
+      "skill": "aks",
+      "resumeSkills": [
+        "kubernetes"
+      ],
+      "resumeText": "Learning Kubernetes in lab environment with k3s and homelab.",
+      "expectedKind": "hard_gap",
+      "softExpected": false
+    },
+    {
+      "name": "powershell adjacent with infra baseline",
+      "skill": "powershell",
+      "resumeSkills": [
+        "bash",
+        "python"
+      ],
+      "resumeText": "Automation with Bash and Python scripts.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "yaml adjacent with CI/CD baseline",
+      "skill": "yaml",
+      "resumeSkills": [
+        "ci/cd"
+      ],
+      "resumeText": "Built GitHub Actions CI/CD pipelines.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "azure strict core with aks stays hard gap",
+      "skill": "azure",
+      "resumeSkills": [
+        "aws",
+        "gcp"
+      ],
+      "resumeText": "Multi-cloud experience with AWS and GCP.",
+      "expectedKind": "hard_gap",
+      "softExpected": false,
+      "options": { "strictAzureCore": true }
+    },
+    {
+      "name": "azure adjacent with aws and terraform",
+      "skill": "azure",
+      "resumeSkills": [
+        "aws",
+        "terraform"
+      ],
+      "resumeText": "Managed AWS infrastructure with Terraform.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "serverless adjacent with aws and python",
+      "skill": "serverless",
+      "resumeSkills": [
+        "aws",
+        "python"
+      ],
+      "resumeText": "Built Python services on AWS.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "ci/cd adjacent with devops background",
+      "skill": "ci/cd",
+      "resumeSkills": [
+        "devops"
+      ],
+      "resumeText": "DevOps engineer with infrastructure automation.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "elt adjacent with python sql and pipelines",
+      "skill": "elt",
+      "resumeSkills": [
+        "python",
+        "sql"
+      ],
+      "resumeText": "Built Python data workflows with SQL, API integrations, and orchestration pipelines.",
+      "expectedKind": "adjacent_ownership_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "data-quality adjacent with python sql and prometheus",
+      "skill": "data-quality",
+      "resumeSkills": [
+        "python",
+        "sql",
+        "prometheus"
+      ],
+      "resumeText": "Built Python monitoring with Prometheus and SQL data stores.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "ai-agents direct match with applied AI baseline",
+      "skill": "ai-agents",
+      "resumeSkills": [],
+      "resumeText": "Built agentic AI systems with multi-model routing using OpenAI and Anthropic APIs.",
+      "expectedKind": "direct",
+      "softExpected": true
+    },
+    {
+      "name": "mlops adjacent with applied AI cicd and infra",
+      "skill": "mlops",
+      "resumeSkills": [
+        "devops",
+        "ci/cd"
+      ],
+      "resumeText": "DevOps engineer with CI/CD pipelines, applied AI experience with OpenAI API and Anthropic.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "llm direct match with applied AI baseline",
+      "skill": "llm",
+      "resumeSkills": [],
+      "resumeText": "Used OpenAI API, Anthropic Claude, and Gemini for AI engineering.",
+      "expectedKind": "direct",
+      "softExpected": true
+    },
+    {
+      "name": "prompt-engineering adjacent with applied AI",
+      "skill": "prompt-engineering",
+      "resumeSkills": [],
+      "resumeText": "AI engineer working with OpenAI API and Anthropic Claude for agentic AI.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "embeddings adjacent with python and api integrations",
+      "skill": "embeddings",
+      "resumeSkills": [
+        "python",
+        "api-integrations"
+      ],
+      "resumeText": "Built Python services with API integrations.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "ai-adoption adjacent with api integrations",
+      "skill": "ai-adoption",
+      "resumeSkills": [],
+      "resumeText": "Integrated OpenAI API and Anthropic APIs into production pipelines.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "sql direct match via sql baseline text",
+      "skill": "sql",
+      "resumeSkills": [],
+      "resumeText": "Experience with SQL databases and PostgreSQL.",
+      "expectedKind": "direct",
+      "softExpected": true
+    },
+    {
+      "name": "api-integrations direct match via api signals in text",
+      "skill": "api-integrations",
+      "resumeSkills": [],
+      "resumeText": "Built API-heavy integrations with OpenAI API, Anthropic, Interactive Brokers, Polygon, and CBOE.",
+      "expectedKind": "direct",
+      "softExpected": true
+    },
+    {
+      "name": "airtable hard gap without python or sql background",
+      "skill": "airtable",
+      "resumeSkills": [
+        "kubernetes"
+      ],
+      "resumeText": "Managed Kubernetes clusters.",
+      "expectedKind": "hard_gap",
+      "softExpected": false
+    },
+    {
+      "name": "data-quality hard gap without python or sql",
+      "skill": "data-quality",
+      "resumeSkills": [
+        "kubernetes"
+      ],
+      "resumeText": "Managed Kubernetes infrastructure.",
+      "expectedKind": "hard_gap",
+      "softExpected": false
+    },
+    {
+      "name": "elt hard gap without python",
+      "skill": "elt",
+      "resumeSkills": [
+        "sql"
+      ],
+      "resumeText": "Wrote SQL queries.",
+      "expectedKind": "hard_gap",
+      "softExpected": false
+    },
+    {
+      "name": "astro adjacent with python cicd and pipelines",
+      "skill": "astro",
+      "resumeSkills": [
+        "python",
+        "ci/cd",
+        "bash"
+      ],
+      "resumeText": "Built Python automation, pipeline scripts, and CI/CD workflows.",
+      "expectedKind": "adjacent_ownership_ramp",
+      "softExpected": true
+    },
+    {
+      "name": "devops adjacent with infra and terraform",
+      "skill": "devops",
+      "resumeSkills": [
+        "terraform",
+        "sre"
+      ],
+      "resumeText": "SRE with Terraform infrastructure automation.",
+      "expectedKind": "adjacent_short_ramp",
+      "softExpected": true,
+      "options": { "includeDevopsAdjacency": true }
+    }
+  ],
+  "portugalSignalCases": [
+    {
+      "name": "lisbon location is treated as portugal signal",
+      "value": "Remote from Lisbon, Portugal",
+      "expected": true
+    },
+    {
+      "name": "berlin location is not treated as portugal signal",
+      "value": "Berlin, Germany",
+      "expected": false
+    }
+  ],
+  "scoreVacancyCases": [
+    {
+      "name": "mandatory hard gaps produce do-not-apply decision and capped score",
+      "resumeText": "Senior engineer with Python automation, AWS infrastructure, Bash, and CI/CD workflows.",
+      "vacancy": {
+        "id": "hard_gap_data_platform",
+        "title": "Senior Data Engineer",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Requirements: Python, BigQuery, DBT, and Airflow for modern ELT pipelines."
+      },
+      "expectedDecision": "do_not_apply_now",
+      "expectedRelevant": false,
+      "maxScore": 39
+    },
+    {
+      "name": "transferable data-platform foundations still produce apply decision",
+      "resumeText": "Senior engineer with Python automation, GCP services, SQL, PostgreSQL, GitHub Actions CI/CD, API integrations and production pipelines.",
+      "vacancy": {
+        "id": "apply_data_platform",
+        "title": "Senior Data Engineer",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Requirements: Python, SQL, GCP, Astro (Airflow), DBT, BigQuery, Airtable API integrations, CI/CD, ELT pipelines, and data quality checks."
+      },
+      "expectedDecision": "apply",
+      "expectedRelevant": true,
+      "minScore": 60
+    },
+    {
+      "name": "non target low signal roles stay out of apply output",
+      "resumeText": "Hands-on SRE with AWS, GCP, Terraform, Python automation, Bash, Prometheus, Grafana, incident response, and GitHub Actions.",
+      "vacancy": {
+        "id": "reject_account_exec_low_signal",
+        "title": "Mid-Market Account Executive (Romanian Market)",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Fast-growing fintech is hiring an account executive to prospect and close mid-market customers. Fluent Romanian and English required. Salesforce experience is a plus."
+      },
+      "expectedDecision": "do_not_apply_now",
+      "expectedRelevant": false,
+      "maxScore": 39
+    },
+    {
+      "name": "target infra role with direct match can stay apply even below old score threshold",
+      "resumeText": "Hands-on SRE with AWS, Python automation, Bash, incident response, GitHub Actions, and Linux production support.",
+      "vacancy": {
+        "id": "apply_low_score_target_role",
+        "title": "Site Reliability Engineer",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Requirements: AWS."
+      },
+      "expectedDecision": "apply",
+      "expectedRelevant": true,
+      "minScore": 40
+    },
+    {
+      "name": "applied ai role can become apply when signals match ai usage background",
+      "resumeText": "Hands-on SRE and AI engineer with OpenAI API, Anthropic Claude API, Gemini, Mistral, multi-model routing, agentic AI systems, Python automation, GitHub Actions, AWS and GCP.",
+      "vacancy": {
+        "id": "apply_applied_ai_specialist",
+        "title": "AI Specialist",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Design, build, and deploy AI models including embeddings and LLM prompt engines. Drive AI adoption, reusable AI modules, agentic AI workflows, and ML-Ops for continuous deployment."
+      },
+      "expectedDecision": "apply",
+      "expectedRelevant": true,
+      "minScore": 55
+    },
+    {
+      "name": "training heavy ai role stays out of apply output",
+      "resumeText": "Hands-on SRE and AI engineer with OpenAI API, Anthropic Claude API, Gemini, Mistral, multi-model routing, agentic AI systems, Python automation, GitHub Actions, AWS and GCP.",
+      "vacancy": {
+        "id": "reject_ai_model_trainer",
+        "title": "AI Model Trainer",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Train and fine-tune deep learning models with PyTorch and TensorFlow. Build research datasets, annotation workflows, and model evaluation loops."
+      },
+      "expectedDecision": "do_not_apply_now",
+      "expectedRelevant": false,
+      "maxScore": 39
+    },
+    {
+      "name": "closed vacancy override results in 0 score and do_not_apply_now decision",
+      "resumeText": "Hands-on SRE with AWS, Python automation, Bash, incident response, GitHub Actions, and Linux production support.",
+      "vacancy": {
+        "id": "closed_vacancy_case",
+        "title": "Site Reliability Engineer",
+        "company": "Example",
+        "location": "Lisbon, Portugal",
+        "posted": "1d",
+        "description": "Requirements: AWS.",
+        "closed": true
+      },
+      "expectedDecision": "do_not_apply_now",
+      "expectedRelevant": false,
+      "maxScore": 0,
+      "minScore": 0
+    }
+  ],
+  "aiRoleCases": [
+    {
+      "name": "applied ai role title still counts as apply",
+      "vacancy": {
+        "title": "AI Specialist",
+        "description": "Design, build, and deploy AI models including embeddings and LLM prompt engines. Drive AI adoption initiatives and reusable AI modules.",
+        "company": "Example",
+        "location": "Lisbon, Portugal"
+      },
+      "resumeText": "Hands-on AI engineer working with OpenAI API, Anthropic Claude API, Gemini, Mistral, and multi-model routing.",
+      "expectedAppliedAi": true,
+      "expectedTrainingHeavy": false
+    },
+    {
+      "name": "training-heavy ai role stays do-not-apply",
+      "vacancy": {
+        "title": "AI Model Trainer",
+        "description": "Train and fine-tune PyTorch/TensorFlow models, build research datasets, and run annotation workflows.",
+        "company": "Example",
+        "location": "Lisbon, Portugal"
+      },
+      "resumeText": "Experience building annotation pipelines, running research datasets, and mentoring labeling teams.",
+      "expectedAppliedAi": false,
+      "expectedTrainingHeavy": true
+    }
+  ]
+}

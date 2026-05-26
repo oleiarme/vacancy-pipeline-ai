@@ -1,0 +1,87 @@
+# Auth storage states - NEVER commit these
+auth/
+.env
+
+# Data blobs — large generated JSON files, not for version control
+data/*.json
+
+# Debug / scratch files that end up in root
+*.html
+*.jpeg
+*.png
+ebay_homepage.jpeg
+glassdoor_login.png
+li_screenshot.png
+li_html.html
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Node
+node_modules/
+
+# AI tooling
+.claude/
+.gemini/
+.cursor/
+.aider/
+.agents/
+
+# Local IDE/editor
+.vscode/
+.idea/
+
+# Runtime / cache
+.cache/
+tmp/
+temp/
+logs/
+*.log
+
+# Reports / generated artifacts
+reports/
+playwright-report/
+test-results/
+coverage/
+
+# Session / handoff
+.history/
+SESSION-HANDOFF.md
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Package manager
+package-lock.backup.json
+
+# Local databases
+*.sqlite
+*.db
+
+# Kubernetes / infra
+kubeconfig
+*.kubeconfig
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Secrets / credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Env examples allowed
+!.env.example
+
+# OS / misc
+*.tmp
+*.bak
+*.swp
+

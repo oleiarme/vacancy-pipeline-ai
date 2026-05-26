@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -eu
+
+echo "[pre-commit] Running verify:pipeline..."
+
+if command -v npm >/dev/null 2>&1; then
+  npm run verify:pipeline
+elif command -v npm.cmd >/dev/null 2>&1; then
+  npm.cmd run verify:pipeline
+else
+  echo "[pre-commit] npm is not available in PATH"
+  exit 1
+fi
+
+echo "[pre-commit] verify:pipeline passed"

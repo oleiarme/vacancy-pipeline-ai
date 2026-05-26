@@ -1,0 +1,69 @@
+{
+  "notificationCards": [
+    {
+      "name": "direct job notification in russian",
+      "card": {
+        "text": "SRE: ???",
+        "posted": "2 ?.",
+        "actionLabel": "See job",
+        "href": "https://www.linkedin.com/jobs/view/4323277763/"
+      },
+      "expected": {
+        "isJobNotification": true,
+        "targetType": "job_view",
+        "jobId": "li_4323277763",
+        "sourceVariant": "notifications",
+        "signal": true,
+        "signalType": "jobs_tab_new_opportunity"
+      }
+    },
+    {
+      "name": "list notification expands to multiple jobs",
+      "card": {
+        "text": "null: ???",
+        "posted": "1 ?.",
+        "actionLabel": "See jobs",
+        "href": "https://www.linkedin.com/jobs/search/?keywords=SRE&location=Porto%20Salvo"
+      },
+      "expected": {
+        "isJobNotification": true,
+        "targetType": "job_list",
+        "jobId": null,
+        "sourceVariant": "notifications",
+        "signal": true,
+        "signalType": "jobs_tab_new_opportunity"
+      }
+    },
+    {
+      "name": "generic jobs home notification uses home resolver",
+      "card": {
+        "text": "Best jobs for you",
+        "posted": "1 h",
+        "actionLabel": "Show all",
+        "href": "https://www.linkedin.com/jobs/"
+      },
+      "expected": {
+        "isJobNotification": true,
+        "targetType": "job_home",
+        "jobId": null,
+        "sourceVariant": "notifications",
+        "signal": true,
+        "signalType": "jobs_tab_new_opportunity"
+      }
+    },
+    {
+      "name": "non job notification is ignored",
+      "card": {
+        "text": "Mentioned in a post.",
+        "posted": "5 h",
+        "actionLabel": "Open",
+        "href": "https://www.linkedin.com/feed/update/urn:li:activity:123"
+      },
+      "expected": {
+        "isJobNotification": false,
+        "targetType": "unknown",
+        "jobId": null
+      }
+    }
+  ]
+}

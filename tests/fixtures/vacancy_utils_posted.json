@@ -1,0 +1,170 @@
+[
+  {
+    "name": "compact day format stays urgent at five days",
+    "raw": "5d",
+    "expectedDays": 5,
+    "expectedUrgent": true
+  },
+  {
+    "name": "english hours round up to one day",
+    "raw": "12h",
+    "expectedDays": 1,
+    "expectedUrgent": true
+  },
+  {
+    "name": "linkedin russian hours round up to one day",
+    "raw": "14 часов назад\nВ течение последних 24 часов",
+    "expectedDays": 1,
+    "expectedUrgent": true
+  },
+  {
+    "name": "linkedin russian minutes stay same-day urgent",
+    "raw": "8 минут назад\nВ течение последних 24 часов",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "just posted is urgent 0 days",
+    "raw": "Just posted",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "today is urgent 0 days",
+    "raw": "Posted today",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "yesterday is urgent 1 day",
+    "raw": "1 day ago",
+    "expectedDays": 1,
+    "expectedUrgent": true
+  },
+  {
+    "name": "3 days is urgent",
+    "raw": "3 days ago",
+    "expectedDays": 3,
+    "expectedUrgent": true
+  },
+  {
+    "name": "7 days is not urgent",
+    "raw": "7d",
+    "expectedDays": 7,
+    "expectedUrgent": false
+  },
+  {
+    "name": "2 weeks is not urgent",
+    "raw": "2 weeks ago",
+    "expectedDays": 14,
+    "expectedUrgent": false
+  },
+  {
+    "name": "1 month is not urgent",
+    "raw": "1 month ago",
+    "expectedDays": 30,
+    "expectedUrgent": false
+  },
+  {
+    "name": "few minutes ago is urgent 0 days",
+    "raw": "A few minutes ago",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "moments ago is urgent 0 days",
+    "raw": "Moments ago",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "russian today is urgent",
+    "raw": "сегодня",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "russian yesterday is urgent",
+    "raw": "вчера",
+    "expectedDays": 1,
+    "expectedUrgent": true
+  },
+  {
+    "name": "russian только что is urgent",
+    "raw": "только что",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "compact 1w not urgent",
+    "raw": "1w",
+    "expectedDays": 7,
+    "expectedUrgent": false
+  },
+  {
+    "name": "compact 1mo not urgent",
+    "raw": "1mo",
+    "expectedDays": 30,
+    "expectedUrgent": false
+  },
+  {
+    "name": "right now is urgent",
+    "raw": "Right now",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "new today is urgent",
+    "raw": "New today",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "empty posted returns null days",
+    "raw": "",
+    "expectedDays": null,
+    "expectedUrgent": false
+  },
+  {
+    "name": "null posted returns null days",
+    "raw": null,
+    "expectedDays": null,
+    "expectedUrgent": false
+  },
+  {
+    "name": "gibberish is not urgent",
+    "raw": "xyz random text",
+    "expectedDays": null,
+    "expectedUrgent": false
+  },
+  {
+    "name": "compact hours is urgent",
+    "raw": "6h",
+    "expectedDays": 1,
+    "expectedUrgent": true
+  },
+  {
+    "name": "compact minutes is urgent 0 days",
+    "raw": "30m",
+    "expectedDays": 0,
+    "expectedUrgent": true
+  },
+  {
+    "name": "russian days urgent",
+    "raw": "3 дня назад",
+    "expectedDays": 3,
+    "expectedUrgent": true
+  },
+  {
+    "name": "russian weeks not urgent",
+    "raw": "2 недели назад",
+    "expectedDays": 14,
+    "expectedUrgent": false
+  },
+  {
+    "name": "russian months not urgent",
+    "raw": "1 месяц назад",
+    "expectedDays": 30,
+    "expectedUrgent": false
+  }
+]

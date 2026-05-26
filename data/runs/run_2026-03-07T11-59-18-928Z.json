@@ -1,0 +1,50 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "total": 17,
+      "relevant": 6
+    },
+    "3": {
+      "ok": true
+    },
+    "5": {
+      "ok": true,
+      "artifact": "reports\\verification\\verify_2026-03-07T11-59-18-928Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "count": 9
+    },
+    "1b": {
+      "ok": true,
+      "issues": [],
+      "count": 8
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "count": 17
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "total": 17,
+      "relevant": 6
+    }
+  },
+  "issues": [],
+  "startedAt": "2026-03-07T11:59:18.929Z",
+  "runStamp": "2026-03-07T11-59-18-928Z",
+  "finishedAt": "2026-03-07T12:01:29.936Z",
+  "elapsedSec": "131.0",
+  "artifacts": {
+    "vacancyReport": "reports\\vacancies_report.md",
+    "verificationReport": "reports\\verification\\verify_2026-03-07T11-59-18-928Z.json",
+    "sessionNotes": "reports\\session_notes\\session_2026-03-07T11-59-18-928Z.md",
+    "runHistoryReport": "data\\runs\\run_2026-03-07T11-59-18-928Z.json",
+    "lastRunReport": "data\\last_run.json"
+  }
+}

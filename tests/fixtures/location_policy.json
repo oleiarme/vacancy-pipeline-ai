@@ -1,0 +1,35 @@
+{
+  "signals": ["Portugal", "Lisbon", "Porto"],
+  "cases": [
+    {
+      "name": "matches russian portugal remote location",
+      "vacancy": {
+        "location": "Португалия (Удаленная работа)",
+        "title": "DevOps Engineer",
+        "description": "",
+        "link": "https://www.linkedin.com/jobs/view/1/"
+      },
+      "expected": true
+    },
+    {
+      "name": "matches russian porto plus portugal location",
+      "vacancy": {
+        "location": "Порто, Порто, Португалия (Удаленная работа)",
+        "title": "Platform Engineer",
+        "description": "",
+        "link": "https://www.linkedin.com/jobs/view/2/"
+      },
+      "expected": true
+    },
+    {
+      "name": "rejects unrelated germany vacancy",
+      "vacancy": {
+        "location": "Berlin, Germany",
+        "title": "Platform Engineer",
+        "description": "",
+        "link": "https://www.linkedin.com/jobs/view/3/"
+      },
+      "expected": false
+    }
+  ]
+}

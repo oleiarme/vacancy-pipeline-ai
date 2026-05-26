@@ -1,0 +1,117 @@
+{
+  "portals": [
+    {
+      "name": "glassdoor",
+      "enabled": true,
+      "searchUrls": [
+        "https://www.glassdoor.com/Job/portugal-devops-engineer-jobs-SRCH_IL.0,8_IN195_KO9,24.htm",
+        "https://www.glassdoor.com/Job/portugal-sre-jobs-SRCH_IL.0,8_IN195_KO9,12.htm",
+        "https://www.glassdoor.com/Job/portugal-site-reliability-engineer-jobs-SRCH_IL.0,8_IN195_KO9,34.htm"
+      ],
+      "authStateFile": "../auth/glassdoor_state.json",
+      "selectors": {
+        "vacancyCard": "[data-test='jobListing']",
+        "title": "[data-test='job-title']",
+        "company": "[data-test='emp-name']",
+        "salary": "[data-test='detailSalary']",
+        "link": "[data-test='job-title'] a",
+        "nextPage": "button[data-test='pagination-next']"
+      }
+    },
+    {
+      "name": "linkedin",
+      "enabled": true,
+      "searchUrls": [
+        "https://www.linkedin.com/jobs/search/?keywords=DevOps%20Engineer&location=Portugal&f_TPR=r604800",
+        "https://www.linkedin.com/jobs/search/?keywords=SRE&location=Portugal&f_TPR=r604800",
+        "https://www.linkedin.com/jobs/search/?keywords=Site%20Reliability%20Engineer&location=Portugal&f_TPR=r604800",
+        "https://www.linkedin.com/jobs/search/?keywords=Platform%20Engineer&location=Portugal&f_TPR=r604800"
+      ],
+      "authStateFile": "../auth/linkedin_state.json",
+      "selectors": {
+        "vacancyCard": ".job-card-container, .base-search-card",
+        "title": ".job-card-list__title, .base-search-card__title",
+        "company": ".job-card-container__company-name, .base-search-card__subtitle",
+        "location": ".job-card-container__metadata-item, .job-search-card__location",
+        "link": "a.job-card-list__title, a.base-card__full-link"
+      }
+    }
+  ],
+  "filters": {
+    "keywords_include": [
+      "DevOps",
+      "SRE",
+      "Platform",
+      "Infrastructure",
+      "Kubernetes",
+      "Site Reliability",
+      "Cloud"
+    ],
+    "keywords_exclude": [
+      "Junior",
+      "Intern",
+      "Trainee",
+      "Entry Level"
+    ],
+    "locations": [
+      "Portugal",
+      "Lisbon",
+      "Lisboa",
+      "Porto",
+      "Braga",
+      "Coimbra",
+      "Aveiro",
+      "Faro",
+      "Setubal",
+      "Leiria",
+      "Oeiras",
+      "Cascais",
+      "Sintra",
+      "Guimaraes",
+      "Matosinhos",
+      "Maia",
+      "Amadora",
+      "Almada",
+      "Loures",
+      "Odivelas",
+      "Gondomar",
+      "Seixal",
+      "Barreiro",
+      "Vila Nova de Gaia",
+      "Viana do Castelo",
+      "Vila Real",
+      "Braganca",
+      "Castelo Branco",
+      "Santarem",
+      "Portalegre",
+      "Beja",
+      "Evora",
+      "Viseu",
+      "Funchal",
+      "Ponta Delgada",
+      "Madeira",
+      "Azores",
+      "Acores",
+      "Porto Salvo"
+    ]
+  },
+  "resume": {
+    "path": "config/resume.txt",
+    "min_relevance_score": 60
+  },
+  "settings": {
+    "max_pages_per_search": 3,
+    "linkedin_max_pages_per_search": 1,
+    "linkedin_page_size": 25,
+    "linkedin_days_ago": 1,
+    "linkedin_hours_ago": 24,
+    "linkedin_use_persistent_profile": true,
+    "linkedin_enrich_first_n": "all",
+    "linkedin_enrich_interval_min_ms": 5000,
+    "linkedin_enrich_interval_max_ms": 10000,
+    "delay_between_pages_ms": 2000,
+    "delay_between_vacancies_ms": 1500,
+    "take_screenshots": true,
+    "output_format": "markdown"
+  }
+}

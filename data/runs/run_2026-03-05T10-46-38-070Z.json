@@ -1,0 +1,61 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "total": 5,
+      "relevant": 3
+    },
+    "3": {
+      "ok": true
+    },
+    "5": {
+      "ok": true,
+      "artifact": "reports\\verification\\verify_2026-03-05T10-46-38-070Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "count": 5
+    },
+    "1b": {
+      "ok": false,
+      "issues": [
+        "data/vacancies_scrape_linkedin.json is empty"
+      ]
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "count": 5
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "total": 5,
+      "relevant": 3
+    }
+  },
+  "issues": [
+    {
+      "phase": "1b",
+      "error": "Exit code 1"
+    },
+    {
+      "phase": "2.5",
+      "error": "Exit code 1",
+      "nonBlocking": true
+    }
+  ],
+  "startedAt": "2026-03-05T10:46:38.072Z",
+  "runStamp": "2026-03-05T10-46-38-070Z",
+  "finishedAt": "2026-03-05T10:46:39.797Z",
+  "elapsedSec": "1.7",
+  "artifacts": {
+    "vacancyReport": "reports\\vacancies_report.md",
+    "verificationReport": "reports\\verification\\verify_2026-03-05T10-46-38-070Z.json",
+    "sessionNotes": "reports\\session_notes\\session_2026-03-05T10-46-38-070Z.md",
+    "runHistoryReport": "data\\runs\\run_2026-03-05T10-46-38-070Z.json",
+    "lastRunReport": "data\\last_run.json"
+  }
+}

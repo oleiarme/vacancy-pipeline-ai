@@ -1,0 +1,51 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "total": 9,
+      "relevant": 5
+    },
+    "3": {
+      "ok": true
+    },
+    "5": {
+      "ok": true,
+      "artifact": "reports\\verification\\verify_2026-03-05T20-08-22-383Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "count": 9
+    },
+    "1b": {
+      "ok": false,
+      "issues": [
+        "data/vacancies_scrape_linkedin.json is empty"
+      ]
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "count": 9
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "total": 9,
+      "relevant": 5
+    }
+  },
+  "issues": [],
+  "startedAt": "2026-03-05T20:08:22.384Z",
+  "runStamp": "2026-03-05T20-08-22-383Z",
+  "finishedAt": "2026-03-05T20:11:39.503Z",
+  "elapsedSec": "197.1",
+  "artifacts": {
+    "vacancyReport": "reports\\vacancies_report.md",
+    "verificationReport": "reports\\verification\\verify_2026-03-05T20-08-22-383Z.json",
+    "sessionNotes": "reports\\session_notes\\session_2026-03-05T20-08-22-383Z.md",
+    "runHistoryReport": "data\\runs\\run_2026-03-05T20-08-22-383Z.json",
+    "lastRunReport": "data\\last_run.json"
+  }
+}

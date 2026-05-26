@@ -1,0 +1,79 @@
+{
+  "collectionLinks": [
+    {
+      "name": "recommended collection link with currentJobId becomes vacancy seed",
+      "entry": {
+        "href": "https://www.linkedin.com/jobs/collections/recommended/?trackingId=abc&currentJobId=4367635448&refId=xyz",
+        "text": "Principal Site Reliability Engineer (verified) Principal Site Reliability Engineer OutSystems - Portugal (Remote)"
+      },
+      "expected": {
+        "id": "li_4367635448",
+        "title": "Principal Site Reliability Engineer",
+        "company": "OutSystems",
+        "location": "Portugal (Remote)",
+        "link": "https://www.linkedin.com/jobs/view/4367635448/"
+      }
+    },
+    {
+      "name": "direct fields clean duplicated verified title",
+      "entry": {
+        "href": "https://www.linkedin.com/jobs/collections/recommended/?trackingId=abc&currentJobId=4335517833&refId=xyz",
+        "title": "Senior DevOps/InfraOps Engineer (\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u0430\u044f \u0432\u0430\u043a\u0430\u043d\u0441\u0438\u044f)Senior DevOps/InfraOps Engineer",
+        "company": "Allia Health Group",
+        "location": "\u041f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u0438\u044f (\u0423\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430)"
+      },
+      "expected": {
+        "id": "li_4335517833",
+        "title": "Senior DevOps/InfraOps Engineer",
+        "company": "Allia Health Group",
+        "location": "\u041f\u043e\u0440\u0442\u0443\u0433\u0430\u043b\u0438\u044f (\u0423\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430)",
+        "link": "https://www.linkedin.com/jobs/view/4335517833/"
+      }
+    },
+    {
+      "name": "non collection link is ignored",
+      "entry": {
+        "href": "https://www.linkedin.com/jobs/preferences/?viewType=SEEKING_PREFERENCES",
+        "text": "Preferences"
+      },
+      "expected": null
+    }
+  ]
+  ,
+  "anchorEntries": [
+    {
+      "name": "anchor entry with duplicated badge title",
+      "entry": {
+        "href": "https://www.linkedin.com/jobs/view/4412345678/?trk=sample",
+        "title": "Senior DevOps/InfraOps Engineer (verified) Senior DevOps/InfraOps Engineer",
+        "text": "Senior DevOps/InfraOps Engineer (verified) Senior DevOps/InfraOps Engineer - CloudNation",
+        "company": "CloudNation",
+        "location": "Portugal (Remote)"
+      },
+      "expected": {
+        "id": "li_4412345678",
+        "title": "Senior DevOps/InfraOps Engineer",
+        "company": "CloudNation",
+        "location": "Portugal (Remote)",
+        "link": "https://www.linkedin.com/jobs/view/4412345678/"
+      }
+    }
+    ,
+    {
+      "name": "anchor entry with missing title uses anchor text",
+      "entry": {
+        "href": "https://www.linkedin.com/jobs/view/4423456789/?trk=sample",
+        "text": "Principal Site Reliability Engineer - CloudNation",
+        "company": "CloudNation",
+        "location": "Portugal (Hybrid)"
+      },
+      "expected": {
+        "id": "li_4423456789",
+        "title": "Principal Site Reliability Engineer",
+        "company": "CloudNation",
+        "location": "Portugal (Hybrid)",
+        "link": "https://www.linkedin.com/jobs/view/4423456789/"
+      }
+    }
+  ]
+}

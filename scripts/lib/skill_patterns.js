@@ -1,0 +1,81 @@
+/**
+ * Shared skill detection patterns for scorer and resume self-check.
+ * Update here to affect both score_vacancies.js and resume_self_check.js.
+ */
+
+const SKILL_PATTERNS = [
+    { key: 'aws', patterns: [/\baws\b/i, /\bamazon web services\b/i] },
+    { key: 'gcp', patterns: [/\bgcp\b/i, /\bgoogle cloud\b/i, /\bcompute engine\b/i] },
+    { key: 'azure', patterns: [/\bazure\b/i] },
+    { key: 'terraform', patterns: [/\bterraform\b/i] },
+    { key: 'aks', patterns: [/\baks\b/i, /\bazure kubernetes service\b/i] },
+    { key: 'kubernetes', patterns: [/\bkubernetes\b/i, /\bk8s\b/i, /\beks\b/i] },
+    { key: 'docker', patterns: [/\bdocker\b/i] },
+    { key: 'linux', patterns: [/\blinux\b/i, /\bubuntu\b/i, /\bdebian\b/i] },
+    { key: 'python', patterns: [/\bpython\b/i] },
+    { key: 'sql', patterns: [/\bsql\b/i] },
+    { key: 'powershell', patterns: [/\bpowershell\b/i, /\bps1\b/i] },
+    { key: 'ruby', patterns: [/\bruby\b/i] },
+    { key: 'rails', patterns: [/\brails\b/i, /\bruby on rails\b/i, /\bror\b/i] },
+    { key: 'node.js', patterns: [/\bnode\b/i, /\bnode\.js\b/i] },
+    { key: 'typescript', patterns: [/\btypescript\b/i, /\bts\b/i] },
+    { key: 'golang', patterns: [/\bgolang\b/i, /\bgo language\b/i, /\bgo services?\b/i, /\bgo developers?\b/i] },
+    { key: 'java', patterns: [/\bjava\b/i] },
+    { key: 'postgresql', patterns: [/\bpostgres\b/i, /\bpostgresql\b/i] },
+    { key: 'mysql', patterns: [/\bmysql\b/i] },
+    { key: 'prometheus', patterns: [/\bprometheus\b/i] },
+    { key: 'grafana', patterns: [/\bgrafana\b/i] },
+    { key: 'ci/cd', patterns: [/\bci\/cd\b/i, /\bgithub actions\b/i, /\bjenkins\b/i, /\bgitlab ci\b/i] },
+    { key: 'yaml', patterns: [/\byaml\b/i, /\.ya?ml\b/i] },
+    { key: 'fastapi', patterns: [/\bfastapi\b/i] },
+    { key: 'ansible', patterns: [/\bansible\b/i] },
+    { key: 'bash', patterns: [/\bbash\b/i, /\bshell\b/i] },
+    { key: 'serverless', patterns: [/\bserverless\b/i, /\blambda\b/i, /\bapi gateway\b/i, /\bfargate\b/i] },
+    { key: 'cdk', patterns: [/\bcdk\b/i, /\baws cdk\b/i, /\bcdktf\b/i] },
+    { key: 'sre', patterns: [/\bsre\b/i, /\bsite reliability\b/i] },
+    { key: 'devops', patterns: [/\bdevops\b/i] },
+    { key: 'airflow', patterns: [/\bairflow\b/i] },
+    { key: 'astro', patterns: [/\bastro\b/i, /\bastro cloud\b/i] },
+    { key: 'dbt', patterns: [/\bdbt\b/i, /\bdbt cloud\b/i, /\bdbt tests?\b/i] },
+    { key: 'bigquery', patterns: [/\bbigquery\b/i, /\bbig query\b/i] },
+    { key: 'airtable', patterns: [/\bairtable\b/i] },
+    { key: 'elt', patterns: [/\belt\b/i, /\betl\b/i] },
+    { key: 'api-integrations', patterns: [/\bapi integrations?\b/i, /\bthird-party integrations?\b/i, /\bthird-party systems?\b/i] },
+    { key: 'llm', patterns: [/\bllm\b/i, /\blarge language models?\b/i, /\bgenerative ai\b/i, /\bgenai\b/i, /\bmulti-model routing\b/i] },
+    { key: 'prompt-engineering', patterns: [/\bprompt engines?\b/i, /\bprompt engineering\b/i, /\bprompt design\b/i, /\bprompt tuning\b/i] },
+    { key: 'embeddings', patterns: [/\bembeddings?\b/i, /\bvector search\b/i, /\bsemantic search\b/i] },
+    { key: 'ai-agents', patterns: [/\bagentic ai\b/i, /\bai agents?\b/i, /\bautonomous reasoning\b/i, /\bopen-?source ai agent\b/i] },
+    { key: 'ai-adoption', patterns: [/\bai adoption\b/i, /\bai initiatives?\b/i, /\breusable ai modules?\b/i, /\bai modules?\b/i] },
+    { key: 'mlops', patterns: [/\bml-?ops\b/i] },
+    { key: 'fine-tuning', patterns: [/\bfine-?tuning\b/i, /\bfine-?tune\b/i, /\bfine tuned\b/i] },
+    { key: 'deep-learning', patterns: [/\bdeep learning\b/i, /\bneural networks?\b/i, /\bpytorch\b/i, /\btensorflow\b/i] },
+    { key: 'annotation', patterns: [/\bannotation\b/i, /\bannotat(?:e|ion|ing|or)\b/i] },
+    { key: 'research-ml', patterns: [/\bresearch workflows?\b/i, /\bresearch datasets?\b/i, /\bresearch models?\b/i] },
+    { key: 'data-quality', patterns: [/\bdata quality\b/i, /\bquality checks?\b/i, /\bdata validation\b/i, /\bgreat expectations\b/i] },
+];
+
+const MANDATORY_MARKERS = [
+    /\bmust have\b/i,
+    /\brequired\b/i,
+    /\bmandatory\b/i,
+    /\byou must\b/i,
+    /\bneed to\b/i,
+    /\brequirements?\b/i,
+    /\bminimum qualifications?\b/i,
+    /\bstrong (knowledge|experience)\b/i,
+    /\bproven experience\b/i,
+    /\bexperience with\b/i,
+];
+
+const OPTIONAL_MARKERS = [
+    /\bplus\b/i,
+    /\bas a plus\b/i,
+    /\bnice to have\b/i,
+    /\bpreferred\b/i,
+    /\bwould be (a )?plus\b/i,
+    /\bbonus\b/i,
+    /\bgood to have\b/i,
+    /\bbonus points\b/i,
+];
+
+module.exports = { SKILL_PATTERNS, MANDATORY_MARKERS, OPTIONAL_MARKERS };

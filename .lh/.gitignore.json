@@ -1,0 +1,18 @@
+{
+    "sourceFile": ".gitignore",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1779795130023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1779795130023,
+            "name": "Commit-0",
+            "content": "# Auth storage states - NEVER commit these\nauth/\n.env\n\n# Data blobs — large generated JSON files, not for version control\ndata/*.json\n\n# Debug / scratch files that end up in root\n*.html\n*.jpeg\n*.png\nebay_homepage.jpeg\nglassdoor_login.png\nli_screenshot.png\nli_html.html\n\n# OS files\nThumbs.db\n.DS_Store\n\n# Node\nnode_modules/\n\n# AI tooling\n.claude/\n.gemini/\n.cursor/\n.aider/\n.agents/\n\n# Local IDE/editor\n.vscode/\n.idea/\n\n# Runtime / cache\n.cache/\ntmp/\ntemp/\nlogs/\n*.log\n\n# Reports / generated artifacts\nreports/\nplaywright-report/\ntest-results/\ncoverage/\n\n# Session / handoff\n.history/\nSESSION-HANDOFF.md\n\n# Build artifacts\ndist/\nbuild/\nout/\n\n# Package manager\npackage-lock.backup.json\n\n# Local databases\n*.sqlite\n*.db\n\n# Kubernetes / infra\nkubeconfig\n*.kubeconfig\n\n# Terraform\n.terraform/\n*.tfstate\n*.tfstate.*\n\n# Secrets / credentials\n*.pem\n*.key\n*.crt\n*.p12\n*.pfx\n\n# Env examples allowed\n!.env.example\n\n# OS / misc\n*.tmp\n*.bak\n*.swp\n\n"
+        }
+    ]
+}

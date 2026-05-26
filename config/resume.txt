@@ -1,0 +1,64 @@
+SENIOR SRE / INFRASTRUCTURE ENGINEER
+AWS · GCP · Terraform · AI/LLM in Production · Python Automation · Observability
+Lisbon, Portugal (EU Residence Permit) | Remote (EU/UK) | GitHub: github.com/oleiarme
+SUMMARY
+Hands-on SRE / Infrastructure Engineer with 6+ years building and operating production systems — AI/LLM pipelines, algorithmic trading platforms, and distributed compute infrastructure (~200 nodes, 24/7). Prior background in infrastructure management and technical operations (17 years) — gives me something most engineers lack: first-hand understanding of SLAs with financial penalties, incident response under pressure, and what downtime actually costs a business. Looking for a senior individual contributor role at a product company where reliability matters.
+TECHNICAL SKILLS
+Cloud & Infra AWS (EC2, IAM), GCP (Compute Engine, Cloud Monitoring, Cloud SQL, IAM), Terraform, Docker, Docker Compose, Linux (Ubuntu/Debian), VPC, subnets, DNS, firewall rules, security groups
+Observability Prometheus, Grafana, structured logging, alerting, health checks, incident response
+Programming Python (asyncio, aiohttp, FastAPI), Bash, SQL, PostgreSQL
+AI/LLM OpenAI API (GPT, Whisper), Anthropic Claude API, Gemini, Mistral, multi-model routing, confidence scoring,
+n8n orchestration
+CI/CD GitHub Actions, Git, Ansible
+Learning Kubernetes (k3s — lab environment)
+PROFESSIONAL EXPERIENCE
+2024 – Present INFRASTRUCTURE & AI ENGINEER
+Independent Projects
+Designed and deployed agentic AI system on AWS/GCP (deployed on AWS + GCP via Terraform)
+•
+Deployed and customized open-source AI agent via Terraform — email, calendar, browser, messaging integrations.
+Built event-driven backend service for LLM classification + routing in production (GCP, 1+ year in production)
+•
+LLM email classification: OpenAI + Anthropic → confidence scoring → automated routing → human fallback. Manual processing reduced by ~60%. Entirely self-directed.
+2022 – 2024 INFRASTRUCTURE ENGINEER
+Algorithmic Trading Platform | Fintech
+(Team of 3) Note: CBOE system ongoing in maintenance mode
+CBOE Options Trading (2023 – present)
+•
+Initiated concept, researched and validated strategies, co-developed with team
+•
+Integrated CBOE (2 APIs), Interactive Brokers, Polygon
+•
+Built observability stack (Prometheus + Grafana) for options trading platform — reduced incident detection time from hours to minutes. Zero data loss over 2+ years
+•
+Maintained 100% data integrity across 2 production trading systems handling real capital. Diagnosed and resolved incidents in <1hr, escalated architecture-level issues to lead
+Crypto Arbitrage (2022 – 2023, completed)
+•
+Co-built cross-exchange arbitrage bot, multiple crypto exchange APIs. VPS, hands-on monitoring.
+2018 – 2022 GPU INFRASTRUCTURE & AUTOMATION ENGINEER
+Distributed Compute (~200 GPUs, paying clients, 2018-2022)
+•
+~200 GPUs across multiple sites: hardware, assembly, OS (HiveOS), networking
+•
+Remote monitoring and automated alerting: utilization, thermals, uptime
+•
+24/7 operations for paying clients — downtime directly impacted client revenue
+•
+Power and cost optimization. Workload distribution and capacity planning
+AUTOMATION ENGINEER | Real Estate Tech (2 paying clients, still operational)
+•
+Migrated infrastructure from VPS to AWS + GCP
+•
+Dockerized deployment. Built and maintained 10+ web scrapers (Idealista, OLX, Copart, IAAI etc.) with automated failure recovery. Systems running 3+ years, serving 2 paying clients with minimal manual intervention
+•
+Telegram notifications — reduced client manual effort by ~70%
+2001 – 2018 Technical Director | Infrastructure Operations — Ukraine
+•
+Managed infrastructure operations across 17 mission-critical facilities (telecom, retail) — 99.9% uptime SLA with contractual financial penalties
+•
+Incident response under 1-hour SLA. BMS/SCADA monitoring. End-to-end technical ownership
+•
+Infrastructure lifecycle planning: CAPEX/OPEX up to €500K, 20-year horizons
+EDUCATION Master's Degree – HVAC & Environmental Protection Systems National University of Construction and Architecture, Ukraine
+Master's Degree – International Economic Relations National Economic University, Ukraine
+LANGUAGES English: Professional Working Proficiency | Russian: Native | Ukrainian: Native | Portuguese: Elementary (actively improving for local networking)

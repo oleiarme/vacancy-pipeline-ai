@@ -1,0 +1,51 @@
+{
+  "phases": {
+    "2": {
+      "ok": false,
+      "issues": [
+        {
+          "phase": "2a",
+          "error": "Exit code 1"
+        }
+      ],
+      "fatal": true
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 29
+      }
+    },
+    "1b": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 87
+      }
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 116
+      }
+    }
+  },
+  "issues": [
+    {
+      "phase": "2a",
+      "error": "Exit code 1"
+    }
+  ],
+  "startedAt": "2026-04-14T16:27:00.236Z",
+  "runStamp": "2026-04-14T16-27-00-234Z",
+  "finishedAt": "2026-04-14T16:30:33.261Z",
+  "elapsedSec": "213.0"
+}

@@ -1,0 +1,85 @@
+{
+  "phases": {
+    "2": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "total": 111,
+        "relevant": 52
+      }
+    },
+    "3": {
+      "ok": true,
+      "reportPath": "C:\\Users\\oleia\\Documents\\2026\\antigravity\\cv\\reports\\vacancies_report.md"
+    },
+    "4": {
+      "ok": true,
+      "issues": []
+    },
+    "5": {
+      "ok": true,
+      "issues": [],
+      "artifact": "reports\\verification\\verify_2026-04-06T13-58-47-128Z.json"
+    },
+    "1a": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 27
+      }
+    },
+    "1b": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 84
+      }
+    },
+    "1c": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "count": 111
+      }
+    },
+    "2b": {
+      "ok": true,
+      "issues": [],
+      "check": {
+        "ok": true,
+        "issues": [],
+        "total": 111,
+        "relevant": 52
+      }
+    },
+    "2.5": {
+      "ok": true,
+      "issues": [
+        {
+          "phase": "2.5",
+          "error": "Exit code 1",
+          "nonBlocking": true
+        }
+      ]
+    }
+  },
+  "issues": [
+    {
+      "phase": "2.5",
+      "error": "Exit code 1",
+      "nonBlocking": true
+    }
+  ],
+  "startedAt": "2026-04-06T13:58:47.129Z",
+  "runStamp": "2026-04-06T13-58-47-128Z",
+  "finishedAt": "2026-04-06T13:58:48.449Z",
+  "elapsedSec": "1.3"
+}
