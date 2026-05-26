@@ -148,6 +148,8 @@ async function enrichVacanciesWithDetails(context, jobs, options) {
                     '.jobs-box__html-content',
                     '.jobs-description-content__text',
                     '[data-test-job-description]',
+                    '#expandable-text-box',
+                    '[data-testid="expandable-text-box"]',
                 ];
 
                 const descCandidates = descriptionSelectors

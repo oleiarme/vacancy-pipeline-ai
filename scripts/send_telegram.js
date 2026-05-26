@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { createClient } = require('@supabase/supabase-js');
-const { loadEnvFile } = require('./lib/env');
+const config = require('./lib/config');
 const { filterIgnoredVacancies } = require('./lib/ignore_registry');
 const { buildVacancyKeyboard } = require('./lib/telegram_actions');
 const { extractRetryAfterSeconds, wait } = require('./lib/telegram_delivery');
@@ -9,13 +9,12 @@ const { normalizePosted, parsePostedAge } = require('./lib/vacancy_utils');
 const { annotateVacanciesWithNotionPresence } = require('./lib/notion_presence');
 const { escapeHtml, formatNotionVacancyLine, formatVacancyLine, selectTelegramVacancies } = require('./lib/telegram_formatting');
 
-const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = path.join(ROOT, '.env');
+const ROOT = config.ROOT;
 const SCORED_PATH = path.join(ROOT, 'data', 'scored_vacancies.json');
 const BASE_MESSAGE_DELAY_MS = 2200;
 const MAX_SEND_ATTEMPTS = 4;
 
-const configParams = loadEnvFile(ENV_PATH);
+const configParams = config.env;
 const args = process.argv.slice(2);
 const SEND_ALL_RELEVANT = args.includes('--all-relevant') || String(configParams.TELEGRAM_SEND_ALL_RELEVANT || '').toLowerCase() === 'true';
 const SEND_UNDER_MIN_SCORE = args.includes('--under_min_score');

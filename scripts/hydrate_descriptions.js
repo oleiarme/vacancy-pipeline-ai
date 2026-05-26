@@ -1,13 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
-const { loadEnvFile } = require('./lib/env');
 const { normalizeWhitespace } = require('./lib/text_utils');
+const config = require('./lib/config');
 
-const ROOT = path.resolve(__dirname, '..');
+const ROOT = config.ROOT;
 const VACANCIES_PATH = path.join(ROOT, 'data', 'vacancies.json');
-const ENV_PATH = path.join(ROOT, '.env');
-const LINKEDIN_PROFILE_DIR = path.join(ROOT, 'auth', 'linkedin_profile');
+const LINKEDIN_PROFILE_DIR = config.LINKEDIN_PROFILE_DIR;
 
 const normalizeSpace = normalizeWhitespace;
 
@@ -22,7 +21,7 @@ async function sendTelegramErrorReport(items) {
     const targetItems = items.filter((item) => TARGET_ROLE_REGEX.test(item.title));
     if (targetItems.length === 0) return;
 
-    const env = loadEnvFile(ENV_PATH);
+    const env = config.env;
     const botToken = env.TELEGRAM_BOT_TOKEN;
     const chatId = env.TELEGRAM_CHAT_ID;
     const topicId = env.TELEGRAM_TOPIC_ID;
@@ -84,6 +83,8 @@ async function extractDescriptionFromPage(page) {
                 '[data-test="jobDescription"]',
                 '[data-test="description"]',
                 '.jobDescriptionContent',
+                '#expandable-text-box',
+                '[data-testid="expandable-text-box"]',
                 'article'
             ];
 
@@ -162,6 +163,8 @@ async function hydrateMissingDescriptions(vacancies) {
                     '.jobs-box__html-content',
                     '#JobDescriptionContainer',
                     '[data-test-job-description]',
+                    '#expandable-text-box',
+                    '[data-testid="expandable-text-box"]',
                     'article',
                 ];
                 try {

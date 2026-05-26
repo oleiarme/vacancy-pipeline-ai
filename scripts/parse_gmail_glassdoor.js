@@ -6,16 +6,15 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { spawnSync } = require('child_process');
-const { loadEnvFile } = require('./lib/env');
+const config = require('./lib/config');
 const { normalizePosted, getPostedDays, isPortugalVacancy } = require('./lib/vacancy_utils');
 
-const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = path.join(ROOT, '.env');
-const TOKEN_PATH = path.join(ROOT, '..', 'auth', 'gmail_token.json');
+const ROOT = config.ROOT;
+const TOKEN_PATH = config.GMAIL_TOKEN_PATH;
 const VACANCIES_PATH = path.join(ROOT, 'data', 'vacancies_mail_glassdoor.json');
 const SEEN_IDS_PATH = path.join(ROOT, 'data', 'seen_ids.json');
 
-const env = loadEnvFile(ENV_PATH);
+const env = config.env;
 const getCfg = (key, fallback = '') => {
     const runtime = process.env[key];
     if (runtime !== undefined && runtime !== null) {

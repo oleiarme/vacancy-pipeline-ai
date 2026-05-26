@@ -5,11 +5,10 @@
 const fs = require('fs');
 const path = require('path');
 const { createClient } = require('@supabase/supabase-js');
-const { loadEnvFile } = require('./lib/env');
+const config = require('./lib/config');
 const { parseReasonsFromReasoning, normalizePosted, getPostedDays } = require('./lib/vacancy_utils');
 
-const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = path.join(ROOT, '.env');
+const ROOT = config.ROOT;
 const SCORED_PATH = path.join(ROOT, 'data', 'scored_vacancies.json');
 
 async function fetchExistingStatusesByIds(supabase, ids, chunkSize = 500) {
@@ -34,7 +33,7 @@ async function fetchExistingStatusesByIds(supabase, ids, chunkSize = 500) {
 
 (async () => {
     try {
-        const env = loadEnvFile(ENV_PATH);
+        const env = config.env;
         const SUPABASE_URL = env.SUPABASE_URL;
         const SUPABASE_KEY = env.SUPABASE_KEY;
 

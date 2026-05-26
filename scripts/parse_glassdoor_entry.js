@@ -4,12 +4,10 @@
 
 const path = require('path');
 const { spawnSync } = require('child_process');
-const { loadEnvFile } = require('./lib/env');
+const config = require('./lib/config');
 
-const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = path.join(ROOT, '.env');
-
-const env = loadEnvFile(ENV_PATH);
+const ROOT = config.ROOT;
+const env = config.env;
 const source = String(env.GLASSDOOR_SOURCE || 'web').trim().toLowerCase();
 
 const targetScript = source === 'gmail' ? 'parse_gmail_glassdoor.js' : 'parse_glassdoor.js';

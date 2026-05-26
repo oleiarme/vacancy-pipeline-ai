@@ -6,11 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { createClient } = require('@supabase/supabase-js');
-const { loadEnvFile } = require('./lib/env');
+const config = require('./lib/config');
 const { normalizePosted, getPostedDays, isPortugalVacancy } = require('./lib/vacancy_utils');
 
-const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = path.join(ROOT, '.env');
+const ROOT = config.ROOT;
 
 function normalizeComparableText(value) {
     return String(value || '')
@@ -24,7 +23,7 @@ function titleCompanyKey(title, company) {
 }
 
 async function fetchExistingGlassdoorTitleCompanyKeys() {
-    const env = loadEnvFile(ENV_PATH);
+    const env = config.env;
     const supabaseUrl = env.SUPABASE_URL;
     const supabaseKey = env.SUPABASE_KEY;
     if (!supabaseUrl || !supabaseKey) {

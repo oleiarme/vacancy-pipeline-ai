@@ -6,13 +6,12 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const { URL, URLSearchParams } = require('url');
-const { loadEnvFile } = require('./lib/env');
+const config = require('./lib/config');
 
-const ROOT = path.resolve(__dirname, '..');
-const ENV_PATH = path.join(ROOT, '.env');
-const TOKEN_PATH = path.join(ROOT, '..', 'auth', 'gmail_token.json');
+const ROOT = config.ROOT;
+const TOKEN_PATH = config.GMAIL_TOKEN_PATH;
 
-const env = loadEnvFile(ENV_PATH);
+const env = config.env;
 const CLIENT_ID = String(env.GMAIL_CLIENT_ID || '').trim();
 const CLIENT_SECRET = String(env.GMAIL_CLIENT_SECRET || '').trim();
 const REDIRECT_URI = String(env.GMAIL_REDIRECT_URI || 'http://127.0.0.1:53682/oauth2callback').trim();
